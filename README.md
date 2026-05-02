@@ -1,7 +1,6 @@
 # D&D Battle Map — Python Flask Version
 
-This is a Python/Flask rewrite of the original Node/Express project.
-The frontend files in `public/` are mostly unchanged. The backend REST API was rewritten in Python.
+
 
 ## How to run
 
@@ -52,6 +51,4 @@ http://localhost:3000
 - `POST /api/maps/<map_id>/image`
 - `GET /api/dice/roll`
 
-## Note about Socket.IO
-
-The original project contains Socket.IO setup, but the current frontend uses `const socket = null;` in `public/js/room.js`, so real-time sync is not active. This Flask version keeps a small `/socket.io/socket.io.js` stub to avoid browser errors, but it does not implement live WebSocket updates.
+#
