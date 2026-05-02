@@ -3,10 +3,11 @@
 ## How to run
 
 ```bash
+cd C:\Users\张\Desktop\cs361\code3
 python -m venv .venv
-source .venv/bin/activate   # Windows PowerShell: .venv\Scripts\Activate.ps1
+.venv\Scripts\activate
 pip install -r requirements.txt
-python app.py
+python app.p
 ```
 
 Then open:
