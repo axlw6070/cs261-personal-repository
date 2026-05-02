@@ -3,7 +3,7 @@
 ## How to run
 
 ```bash
-cd C:\Users\张\Desktop\cs361\code3
+cd YOUR ADRRESS
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
