@@ -1,7 +1,4 @@
-# D&D Battle Map — Python Flask Version
-
-This is a Python/Flask rewrite of the original Node/Express project.
-The frontend files in `public/` are mostly unchanged. The backend REST API was rewritten in Python.
+# D&D Battle Map — Python Flask Version v0.1.0
 
 ## How to run
 
