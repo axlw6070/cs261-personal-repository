@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>D&D Map Rooms</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>D&D Virtual Map</h1>
+    <p>Create or join a room to start your session.</p>
+  </header>
+
+  <main class="main-content">
+    <section class="panel">
+      <h2>Create Room</h2>
+      <form id="create-room-form">
+        <label>
+          Room name
+          <input type="text" id="create-room-name" required />
+        </label>
+        <button type="submit">Create Room</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Existing Rooms</h2>
+      <ul id="room-list" class="room-list">
+        <!-- Filled by main.js -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Simple D&D map tool – CS 290 final project</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="room">
+  <h2 id="room-title">Room: {{ room_id }}</h2>
+
+  <div id="room-root" class="room-layout">
+    <div class="map-panel">
+      <canvas id="map-canvas" width="800" height="600"></canvas>
+    </div>
+
+    <aside class="side-panel">
+      <section class="players-panel">
+        <h3>Players</h3>
+        <ul id="player-list"></ul>
+      </section>
+
+      <section class="gm-panel">
+        <button id="btn-gm-toggle">Switch to GM View</button>
+      </section>
+
+      <section class="room-actions-panel">
+        <h3>Room Actions</h3>
+        <button id="btn-back-home">Back to Home</button>
+        <button id="btn-delete-room" style="margin-top: 4px; color: #fff; background-color: #b91c1c;">
+          Delete Room
+        </button>
+      </section>
+
+      <section class="map-upload-panel">
+        <h3>Map Image</h3>
+        <input type="file" id="map-upload-input" accept="image/*" />
+      </section>
+
+      <section class="tokens-panel">
+        <h3>Tokens</h3>
+        <div class="token-form">
+          <input
+            type="text"
+            id="token-name-input"
+            placeholder="Token name"
+            style="width: 100%; margin-bottom: 4px;"
+          />
+          <input
+            type="color"
+            id="token-color-input"
+            value="#ff0000"
+            style="width: 100%; margin-bottom: 4px;"
+          />
+          <button id="btn-add-token" style="width: 100%;">Add Token</button>
+        </div>
+        <ul id="token-list" style="margin-top: 8px;"></ul>
+      </section>
+
+      <section class="initiative-panel" id="initiative-container"></section>
+      <section class="dice-panel" id="dice-container"></section>
+
+      <section class="fog-panel">
+        <h3>Fog of War</h3>
+        <button id="btn-fog-toggle">Toggle Fog</button>
+      </section>
+    </aside>
+  </div>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/room.js"></script>
+{% endblock %}
