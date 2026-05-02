@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="home-page">
+  <section class="hero-panel">
+    <div>
+      <p class="eyebrow">Sprint 1 usable version</p>
+      <h2>Start a D&D combat room</h2>
+      <p>
+        Create or join a room to upload a battle map, place tokens, track initiative,
+        and roll dice during your session.
+      </p>
+    </div>
+  </section>
+
+  <section class="home-grid">
+    <section class="panel action-card create-room-card">
+      <div class="panel-heading">
+        <span class="step-number">1</span>
+        <div>
+          <h2>Create Room</h2>
+          <p>Start a new combat space for your party.</p>
+        </div>
+      </div>
+      <form id="create-room-form" class="stacked-form">
+        <label for="create-room-name">Room name</label>
+        <input type="text" id="create-room-name" placeholder="Example: Goblin Ambush" required />
+        <button type="submit" class="primary-btn">Create Room</button>
+      </form>
+    </section>
+
+    <section class="panel action-card room-list-card">
+      <div class="panel-heading">
+        <span class="step-number">2</span>
+        <div>
+          <h2>Room List</h2>
+          <p>Join an existing room and continue the session.</p>
+        </div>
+      </div>
+      <ul id="room-list" class="room-list"></ul>
+    </section>
+
+    <section class="panel notes-card">
+      <h2>Notes</h2>
+      <p>
+        Main tools are grouped by task, so players and DMs can focus on the battle
+        instead of searching through menus.
+      </p>
+    </section>
+  </section>
+</main>
+
+<script type="module" src="/js/main.js"></script>
+{% endblock %}

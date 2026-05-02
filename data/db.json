@@ -1,0 +1,60 @@
+{  "maps": [
+    {
+      "id": "map-001",
+      "name": "Sample Map",
+      "width": 30,
+      "height": 20,
+      "fogOfWar": true,
+      "tiles": [],
+      "backgroundImage": ""
+    }
+  ],
+  "tokens": [
+    {
+      "id": "token-001",
+      "mapId": "map-001",
+      "name": "Player 1",
+      "type": "player",
+      "x": 5,
+      "y": 5,
+      "visible": true
+    }
+  ],
+  "initiative": [
+    {
+      "id": "init-001",
+      "tokenId": "token-001",
+      "value": 12
+    }
+  ],
+  "turnState": {
+    "round": 1,
+    "currentIndex": 0,
+    "order": [
+      "init-001"
+    ]
+  },
+  "diceLog": [
+    {
+      "id": "dice-001",
+      "type": "d20",
+      "result": 15,
+      "timestamp": "2025-11-14T12:00:00Z"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "cf88f14b-2c43-4690-89d2-dd291f522b81",
+      "name": "1231",
+      "mapId": null,
+      "players": [],
+      "initiative": {
+        "order": [],
+        "currentIndex": 0,
+        "round": 1
+      },
+      "createdAt": "2025-12-03T01:10:05.845Z",
+      "updatedAt": "2025-12-04T22:31:31.958Z"
+    }
+  ]
+}

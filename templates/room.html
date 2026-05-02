@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="battle-page">
+  <section class="room-title-row">
+    <div>
+      <p class="eyebrow">Battle Room</p>
+      <h2 id="room-title">Room: {{ room_id }}</h2>
+    </div>
+    <div class="room-top-actions">
+      <button id="btn-back-home" class="secondary-btn">Back to Home</button>
+      <button id="btn-gm-toggle" class="secondary-btn">Switch to GM View</button>
+    </div>
+  </section>
+
+  <div id="room-root" class="room-layout">
+    <section class="map-panel panel">
+      <div class="section-title-row">
+        <div>
+          <h3>Map</h3>
+          <p>Upload a map, then drag tokens around the board.</p>
+        </div>
+      </div>
+      <div class="canvas-shell">
+        <canvas id="map-canvas" width="800" height="600"></canvas>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <section class="panel room-actions-panel">
+        <h3>Room Action</h3>
+        <p class="small-note">Use these actions to manage the current room.</p>
+        <button id="btn-delete-room" class="danger-btn">Delete Room</button>
+      </section>
+
+      <section class="panel map-upload-panel">
+        <h3>Upload Map</h3>
+        <label class="file-upload-box" for="map-upload-input">
+          Choose a battle map image
+          <input type="file" id="map-upload-input" accept="image/*" />
+        </label>
+      </section>
+
+      <section class="panel initiative-panel">
+        <h3>Initiative Tracking</h3>
+        <div id="initiative-container"></div>
+      </section>
+
+      <section class="panel tokens-panel">
+        <h3>Token</h3>
+        <div class="token-form">
+          <input type="text" id="token-name-input" placeholder="Token name" />
+          <input type="color" id="token-color-input" value="#ff0000" />
+          <button id="btn-add-token" class="primary-btn">Add Token</button>
+        </div>
+        <ul id="token-list" class="compact-list"></ul>
+      </section>
+
+      <section class="panel dice-panel">
+        <h3>Roll Dice</h3>
+        <div id="dice-container"></div>
+      </section>
+
+      <section class="panel players-panel">
+        <h3>Players</h3>
+        <ul id="player-list" class="compact-list"></ul>
+      </section>
+
+      <section class="panel fog-panel">
+        <h3>Fog of War</h3>
+        <button id="btn-fog-toggle" class="secondary-btn">Toggle Fog</button>
+      </section>
+    </aside>
+  </div>
+
+  <div id="delete-room-modal" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="delete-room-title">
+      <h3 id="delete-room-title">Delete this room?</h3>
+      <p>This will permanently remove the room, uploaded map, tokens, and initiative data.</p>
+      <div class="modal-actions">
+        <button id="btn-delete-cancel" class="secondary-btn">No</button>
+        <button id="btn-delete-confirm" class="danger-btn">Yes</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/room.js"></script>
+{% endblock %}

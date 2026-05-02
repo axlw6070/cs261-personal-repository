@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>D&D Room</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 id="room-title">Room</h1>
+    <nav class="top-controls">
+      <button id="btn-gm-toggle" type="button">Toggle GM Mode</button>
+      <button id="btn-fog-toggle" type="button">Toggle Fog</button>
+    </nav>
+  </header>
+
+  <main class="room-layout">
+    <section class="map-section">
+      <canvas id="map-canvas" width="960" height="640">
+        Your browser does not support canvas.
+      </canvas>
+    </section>
+
+    <section class="side-panel">
+      <div class="panel">
+        <h2>Players</h2>
+        <ul id="player-list"></ul>
+      </div>
+
+      <div class="panel">
+        <h2>Initiative</h2>
+        <div id="initiative-container"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Dice Roller</h2>
+        <div id="dice-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="index.html">Back to rooms</a>
+  </footer>
+
+  <!-- If you use Socket.IO -->
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+
+  <script src="js/api.js"></script>
+  <script src="js/mapCanvas.js"></script>
+  <script src="js/tokenController.js"></script>
+  <script src="js/fogController.js"></script>
+  <script src="js/initiative.js"></script>
+  <script src="js/diceRoller.js"></script>
+  <script src="js/room.js"></script>
+</body>
+</html>
